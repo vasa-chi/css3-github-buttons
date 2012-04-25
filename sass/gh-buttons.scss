@@ -1,0 +1,180 @@
+/* ------------------------------------------
+ * CSS3 GITHUB BUTTONS (Nicolas Gallagher)
+ * Licensed under Unlicense
+ * http://github.com/necolas/css3-github-buttons
+ * --------------------------------------- */
+
+@import "compass";
+@import "compass/css3";
+@import "compass/utilities";
+@import "compass/css3/opacity";
+@import "gh-icons";
+
+$inactive-grad-from: #f4f4f4;
+$inactive-grad-to: darken($inactive-grad-from, 10%);
+$inactive-background-color: $inactive-grad-to;
+$inactive-border-color: darken($inactive-background-color, 10%);
+
+$hover-grad-from: #599bdc;
+$hover-grad-to: darken($hover-grad-from, 20%);
+
+$hover-danger-grad-from: #dc5f59;
+$hover-danger-grad-to: darken($hover-danger-grad-from, 20%);
+
+$hover-positive-grad-from: #6edc6e;
+$hover-positive-grad-to: darken($hover-positive-grad-from, 20%);
+
+@mixin gh-buttoned($hover-from, $hover-to, $text-default, $text-hover){
+  color: $text-default;
+
+  &:hover, &:focus, &:active, &.active {
+    text-decoration: none;
+    text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.3);
+    color: $text-hover;
+  }
+
+  &:hover, &:focus {
+    @include background-image(linear-gradient($hover-from, $hover-to));
+    border-color: darken($hover-from, 10%);
+    background-color: $hover-to
+  }
+
+  &:active, &.active {
+    @include background-image(linear-gradient($hover-to, $hover-from));
+    border-color: darken($hover-to, 10%);
+    background-color: $hover-from;
+  }
+}
+
+.button {
+  @include background-image(linear-gradient($inactive-grad-from, $inactive-grad-to));
+  @include inline-block;
+  @include border-radius(0.2em);
+  position: relative;
+  overflow: visible;
+  padding: 0.5em 1em;
+  border: 1px solid $inactive-border-color;
+  margin: 0;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 1px 1px 0 #fff;
+  font: 11px/normal sans-serif;
+  color: #333;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  background-color: $inactive-background-color;
+  -moz-background-clip: padding; /* for Firefox 3.6 */
+  background-clip: padding-box;
+/* IE hacks */
+  zoom: 1;
+
+  @include gh-buttoned($hover-grad-from, $hover-grad-to, #333, #fff);
+
+  &.primary {
+    font-weight: bold;
+  }
+
+  &.danger {
+    @include gh-buttoned($hover-danger-grad-from, $hover-danger-grad-to, #900, #fff);
+  }
+
+  &.positive {
+    @include gh-buttoned($hover-positive-grad-from, $hover-positive-grad-to, #333, #fff);
+  }
+
+  &.pill {
+    @include border-radius(50em);
+  }
+
+  &.disable {
+    @include opacity(0.5);
+  }
+
+  &.big {
+    font-size: 14px;
+
+    &.icon:before {
+      top: 0;
+    }
+  }
+
+}
+
+/* overrides extra padding on button elements in Firefox */
+.button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+.button + .button,
+.button + .button-group,
+.button-group + .button,
+.button-group + .button-group {
+  margin-left: 15px;
+}
+
+.button-group {
+  @include inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+/* IE hacks */
+  zoom: 1;
+
+  li {
+    float: left;
+    padding: 0;
+    margin: 0;
+  }
+
+  .button {
+    float: left;
+    margin-left: -1px;
+  }
+
+  > .button:not(:first-child):not(:last-child), li:not(:first-child):not(:last-child) .button {
+    @include border-radius(0);
+  }
+
+  > .button:first-child, li:first-child .button {
+    @include border-right-radius(0);
+    margin-left: 0;
+  }
+
+  > .button:last-child, li:last-child > .button {
+    @include border-left-radius(0);
+  }
+}
+
+/* Minor group
+   ========================================================================== */
+
+.button-group.minor-group .button {
+  border: 1px solid $inactive-border-color;
+  text-shadow: none;
+  background-image: none;
+  background-color: #fff;
+
+  &:hover, &:focus {
+    background-color: $hover-grad-from;
+  }
+
+  &:active, &.active {
+    background-color: $hover-grad-to;
+  }
+
+  &.icon:before {
+    @include opacity(0.8);
+  }
+}
+
+/* =============================================================================
+   Button container (mixing buttons and groups, e.g., nav bar)
+   ========================================================================== */
+
+.button-container {
+  .button, .button-group {
+    vertical-align: top;
+  }
+}

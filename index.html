@@ -1,9 +1,9 @@
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="utf-8"> 
-    <title>CSS3 GitHub Buttons</title> 
-    <meta name="description" content="Using CSS3 to create GitHub-style buttons from links, buttons, and inputs"> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>CSS3 GitHub Buttons</title>
+    <meta name="description" content="Using CSS3 to create GitHub-style buttons from links, buttons, and inputs">
     <style>
         /* ------------------------------------------------------------------------------------------------------------- RESET */
 
@@ -47,23 +47,23 @@
         .footer { margin: 20px 0 50px; font-size: 11px; color: #666; text-align: center; }
         .footer a { color: #666; }
     </style>
-    
-    <link rel="stylesheet" href="gh-buttons.css">
-    
+
+    <link rel="stylesheet" href="stylesheets/gh-buttons.css">
+
     <!-- prettyify -->
-    <link rel="stylesheet" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css"> 
-    <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script> 
-</head> 
+    <link rel="stylesheet" href="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.css">
+    <script src="http://google-code-prettify.googlecode.com/svn/trunk/src/prettify.js"></script>
+</head>
 <body onload="prettyPrint()">
 
 <div class="container">
-    <a class="ribbon" href="http://github.com/necolas/css3-github-buttons" target="_blank"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
-    
+    <a class="ribbon" href="https://github.com/vasa-chi/css3-github-buttons" target="_blank"><img src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
     <div class="header">
         <h1>CSS3 GitHub Buttons</h1>
-        <p><b><a href="http://github.com/necolas/css3-github-buttons" title="GitHub repository">CSS3 GitHub Buttons</a> helps you easily create GitHub-style buttons from links, buttons, and inputs.</b></p>
+        <p><b><a href="https://github.com/vasa-chi/css3-github-buttons" title="GitHub repository">CSS3 GitHub Buttons</a> helps you easily create GitHub-style buttons from links, buttons, and inputs.</b></p>
     </div>
-    
+
     <div class="section">
         <h2>Buttons</h2>
         <p>The "buttons" can be created by adding <code>class="button"</code> to any appropriate <code>&lt;a></code>, <code>&lt;button></code>, or <code>&lt;input></code> element. Add a further class of <code>pill</code> to create a button pill-like button. Add a further class of <code>primary</code> to emphasise more important actions.</p>
@@ -76,14 +76,14 @@
                 <button class="button" type="submit">Post comment (button)</button>
             </form>
         </div>
-        
+
         <div class="example">
             <pre class="prettyprint"><code>&lt;a href="#" class="button pill">This is a pill button&lt;/a></code></pre>
             <a href="#button" class="button pill">This is a pill button</a>
         </div>
 
         <div class="example">
-            <pre class="prettyprint"><code>&lt;a href="#" class="button primary">Publish post&lt;/a> 
+            <pre class="prettyprint"><code>&lt;a href="#" class="button primary">Publish post&lt;/a>
 &lt;a href="#" class="button">Save as draft&lt;/a></code></pre>
             <a href="#button" class="button primary">Publish post</a> <a href="#button" class="button">Save as draft</a>
         </div>
@@ -104,12 +104,12 @@
             <pre class="prettyprint"><code>&lt;a href="#" class="button positive">Add post&lt;/a></code></pre>
             <a href="#button" class="button positive">Add post</a>
         </div>
-    
-    
+
+
     <div class="section">
         <h2>Big buttons</h2>
         <p>If you wish to emphasize a specific action you can add the class <code>big</code>.</p>
-        
+
         <div class="example">
             <pre class="prettyprint"><code>&lt;a href="#" class="button big">Create Project&lt;/a></code></pre>
             <a href="#button" class="button big">Create Project</a>
@@ -119,7 +119,7 @@
     <div class="section">
         <h2>Grouped buttons</h2>
         <p>Groups of buttons can be created by wrapping them in an element given a class of <code>button-group</code>. A less important group of buttons can be marked out by adding a further class, <code>minor-group</code>.</p>
-        
+
         <div class="example">
 <pre class="prettyprint"><code>&lt;div class="button-group">
     &lt;a href="#" class="button primary">Dashboard&lt;/a>
@@ -134,14 +134,14 @@
                 <a href="#button" class="button">Logout</a>
             </div>
         </div>
-        
+
         <div class="example">
 <pre class="prettyprint"><code>&lt;ul class="button-group">
     &lt;li>&lt;a href="#" class="button primary pill">Dashboard&lt;/a>&lt;/li>
     &lt;li>&lt;a href="#" class="button pill">Inbox&lt;/a>&lt;/li>
     &lt;li>&lt;a href="#" class="button pill">Account&lt;/a>&lt;/li>
     &lt;li>&lt;a href="#" class="button pill">Logout&lt;/a>&lt;/li>
-&lt;/ul></code></pre>    
+&lt;/ul></code></pre>
             <ul class="button-group">
                 <li><a href="#button" class="button primary pill">Dashboard</a></li>
                 <li><a href="#button" class="button pill">Inbox</a></li>
@@ -149,7 +149,7 @@
                 <li><a href="#button" class="button pill">Logout</a></li>
             </ul>
         </div>
-        
+
         <div class="example">
 <pre class="prettyprint"><code>&lt;div class="button-group <b>minor-group</b>">&hellip;&lt;/div></code></pre>
             <div class="button-group minor-group">
@@ -164,17 +164,17 @@
     <div class="section">
         <h2>Mixed groups</h2>
         <p>Displaying a mixture of grouped and standalone buttons, as might be seen in a toolbar, can be done by adding another wrapping element with the class <code>button-container</code>.</p>
-        
+
         <div class="example">
 <pre class="prettyprint"><code>&lt;div class="actions <b>button-container</b>">
     &lt;a href="#" class="button primary">Compose new&lt;/a>
-    
+
     &lt;div class="button-group">
         &lt;a href="#" class="button primary">Archive&lt;/a>
         &lt;a href="#" class="button">Report spam&lt;/a>
         &lt;a href="#" class="button danger">Delete&lt;/a>
     &lt;/div>
-                        
+
     &lt;div class="button-group minor-group">
         &lt;a href="#" class="button">Move to&lt;/a>
         &lt;a href="#" class="button">Labels&lt;/a>
@@ -182,13 +182,13 @@
 &lt;/div></code></pre>
             <div class="actions button-container">
                 <a href="#button" class="button primary">Compose new</a>
-                
+
                 <div class="button-group">
                     <a href="#button" class="button primary">Archive</a>
                     <a href="#button" class="button">Report spam</a>
                     <a href="#button" class="button danger">Delete</a>
                 </div>
-                                    
+
                 <div class="button-group minor-group">
                     <a href="#button" class="button">Move to</a>
                     <a href="#button" class="button">Labels</a>
@@ -200,12 +200,12 @@
     <div class="section">
         <h2>Buttons with icons</h2>
         <p>A range of icons can be added (only for links and buttons) by adding a class of <code>icon</code> and any one of the provided icon classes:</p>
-            
+
         <div class="example">
             <pre class="prettyprint"><code>&lt;a href="#" class="button icon search">Search&lt;/a></code></pre>
             <a href="#button" class="button icon search">Search</a>
         </div>
-        
+
         <div class="example">
             <table>
                 <thead>
@@ -362,6 +362,6 @@
 <div class="footer">
     <a href="http://github.com/necolas/css3-github-buttons">CSS3 GitHub Buttons</a> by <a href="http://nicolasgallagher.com" title="Website of Nicolas Gallagher">Nicolas Gallagher</a>.
 </div>
-
+</div>
 </body>
 </html>
